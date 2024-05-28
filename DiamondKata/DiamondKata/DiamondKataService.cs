@@ -30,7 +30,7 @@ namespace DiamondKata
                 else
                 {
                     stringBuilder.Append(Alphabet[i]);
-                    stringBuilder.Append(new string(Space, indexOfMidpointLetter));
+                    stringBuilder.Append(new string(Space, i + i - 1));
                     stringBuilder.Append(Alphabet[i]);
                 }
 
@@ -40,11 +40,22 @@ namespace DiamondKata
 
             for (int i = indexOfMidpointLetter; i > 0; i--)
             {
-                stringBuilder.Append(new string(Space, i));
-                stringBuilder.Append(Alphabet[i-1]);
-                stringBuilder.Append(new string(Space, i));
+                if (i == 1)
+                {
+                    stringBuilder.Append(new string(Space, indexOfMidpointLetter));
+                    stringBuilder.Append(Alphabet[0]);
+                    stringBuilder.Append(new string(Space, indexOfMidpointLetter));
+                }
+                else
+                {
+                    stringBuilder.Append(new string(Space, i - 1));
+                    stringBuilder.Append(Alphabet[i-1]);
+                    stringBuilder.Append(new string(Space, i-1));
+                    stringBuilder.Append(Alphabet[i-1]);
+                    stringBuilder.Append(new string(Space, i - 1));
+                }
 
-                if (i-1 != 0)
+                if (i != 1)
                 {
                     stringBuilder.AppendLine();
                 }
