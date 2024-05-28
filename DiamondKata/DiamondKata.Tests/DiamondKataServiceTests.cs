@@ -22,7 +22,7 @@ namespace DiamondKata.Tests
             var diamondPrint = _diamondKataService.GetDiamondPrint(testCase.Key);
 
             // Assert
-            Assert.Equals(testCase.Value, diamondPrint);
+            Assert.That(testCase.Value.Equals(diamondPrint));
         }
     }
 }

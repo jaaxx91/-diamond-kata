@@ -4,7 +4,7 @@
     {
         public string GetDiamondPrint(char letter)
         {
-            throw new NotImplementedException();
+            return letter.ToString();
         }
     }
 }
