@@ -10,7 +10,13 @@ namespace DiamondKata.Tests
             { 'B',
 @"_A_
 B_B
-_A_" }
+_A_"},
+            { 'C',
+@"__A__
+_B_B_
+C___C
+_B_B_
+__A__"}
         };
 
         [SetUp]
