@@ -6,7 +6,11 @@ namespace DiamondKata.Tests
 
         private static readonly Dictionary<char, string> _testCases = new Dictionary<char, string>
         {
-            { 'A', "A" }
+            { 'A', "A" },
+            { 'B',
+@"_A_
+B_B
+_A_" }
         };
 
         [SetUp]
