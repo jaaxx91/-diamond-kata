@@ -12,6 +12,11 @@ namespace DiamondKata
         {
             var indexOfMidpointLetter = Array.IndexOf(Alphabet, letter);
 
+            if (indexOfMidpointLetter == 0)
+            {
+                return letter.ToString();
+            }
+
             var stringBuilder = new StringBuilder();
 
             for (int i = 0; i <= indexOfMidpointLetter; i++)
