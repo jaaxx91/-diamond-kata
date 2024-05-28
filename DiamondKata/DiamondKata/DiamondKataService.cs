@@ -19,28 +19,31 @@ namespace DiamondKata
 
             var stringBuilder = new StringBuilder();
 
-            for (int i = 0; i <= indexOfMidpointLetter; i++)
+            for (int currentLetterIndex = 0; currentLetterIndex <= indexOfMidpointLetter; currentLetterIndex++)
             {
-                stringBuilder.Append(new string(Space, indexOfMidpointLetter - i));
+                stringBuilder.Append(new string(Space, indexOfMidpointLetter - currentLetterIndex));
 
-                if (i == 0)
+                if (currentLetterIndex == 0)
                 {
-                    stringBuilder.Append(Alphabet[i]);
+                    stringBuilder.Append(Alphabet[currentLetterIndex]);
                 }
                 else
                 {
-                    stringBuilder.Append(Alphabet[i]);
-                    stringBuilder.Append(new string(Space, i + i - 1));
-                    stringBuilder.Append(Alphabet[i]);
+                    var previousLetterIndex = currentLetterIndex - 1;
+                    stringBuilder.Append(Alphabet[currentLetterIndex]);
+                    stringBuilder.Append(new string(Space, currentLetterIndex + previousLetterIndex));
+                    stringBuilder.Append(Alphabet[currentLetterIndex]);
                 }
 
-                stringBuilder.Append(new string(Space, indexOfMidpointLetter - i));
+                stringBuilder.Append(new string(Space, indexOfMidpointLetter - currentLetterIndex));
                 stringBuilder.AppendLine();
             }
 
-            for (int i = indexOfMidpointLetter; i > 0; i--)
+            // passed midpoint, going to build bottom of the diamond
+
+            for (int currentLetterIndex = indexOfMidpointLetter - 1; currentLetterIndex >= 0; currentLetterIndex--)
             {
-                if (i == 1)
+                if (currentLetterIndex == 0)
                 {
                     stringBuilder.Append(new string(Space, indexOfMidpointLetter));
                     stringBuilder.Append(Alphabet[0]);
@@ -48,14 +51,14 @@ namespace DiamondKata
                 }
                 else
                 {
-                    stringBuilder.Append(new string(Space, i - 1));
-                    stringBuilder.Append(Alphabet[i-1]);
-                    stringBuilder.Append(new string(Space, i-1));
-                    stringBuilder.Append(Alphabet[i-1]);
-                    stringBuilder.Append(new string(Space, i - 1));
+                    stringBuilder.Append(new string(Space, currentLetterIndex));
+                    stringBuilder.Append(Alphabet[currentLetterIndex]);
+                    stringBuilder.Append(new string(Space, currentLetterIndex));
+                    stringBuilder.Append(Alphabet[currentLetterIndex]);
+                    stringBuilder.Append(new string(Space, currentLetterIndex));
                 }
 
-                if (i != 1)
+                if (currentLetterIndex != 0)
                 {
                     stringBuilder.AppendLine();
                 }
