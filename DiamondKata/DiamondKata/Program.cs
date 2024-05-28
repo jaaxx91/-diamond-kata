@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using DiamondKata;
+
+var diamondKataService = new DiamondKataService();
+
+Console.WriteLine("Hello, please provide letter to print diamond!");
+
+var character = Console.ReadLine();
+
+var diamondPrint = diamondKataService.GetDiamondPrint(character[0]);
+
+Console.WriteLine(diamondPrint);
